@@ -5,16 +5,28 @@ export default function ContenuPanier({id, image, title, quantity, prix, setPani
     const [enSuppression, setEnSuppression] = useState(false)
 
     const HandleClickSupp = ()=> {
-        setEnSuppression(true)
-        setTimeout(()=>{
+        if (quantity <= 1) {
+            setEnSuppression(true)
+            setTimeout(()=>{
+                setPanier(prevPanier => 
+                    prevPanier.map(article =>
+                        article.id === id ? {...article, quantity: article.quantity -1} : article).filter(article => article.quantity > 0)
+                    )
+                    setTotal(prev => prev - prix)
+                    setSolde(prev => prev + prix)
+                    setStocks(prev => ({...prev, [id]: prev[id] + 1}))
+                }, 300)
+            }
+        else {
             setPanier(prevPanier => 
-                prevPanier.map(article =>
-                    article.id === id ? {...article, quantity: article.quantity -1} : article).filter(article => article.quantity > 0)
-                )
-                setTotal(prev => prev - prix)
-                setSolde(prev => prev + prix)
-                setStocks(prev => ({...prev, [id]: prev[id] + 1}))
-        }, 300)
+            prevPanier.map(article =>
+                article.id === id ? {...article, quantity: article.quantity -1} : article).filter(article => article.quantity > 0)
+            )
+            setTotal(prev => prev - prix)
+            setSolde(prev => prev + prix)
+            setStocks(prev => ({...prev, [id]: prev[id] + 1}))
+
+        }
     }
 
     return(
