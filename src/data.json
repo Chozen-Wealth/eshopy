@@ -5,7 +5,7 @@
         "description": "Nouvelle perspective",
         "prix": 12000,
         "stock": 2,
-        "image": "https://media.rolex.com/image/upload/q_auto/f_auto/c_limit,w_1920/v1742229250/rolexcom/collection/hub/2025/collection-rolex-watches-land-dweller-m127334-0001_2503stojan_002"
+        "image": "https://media.rolex.com/image/upload/q_auto/f_auto/c_limit,w_3840/v1742229250/rolexcom/collection/hub/2025/collection-rolex-watches-land-dweller-m127334-0001_2503stojan_002"
 
     },
     {
@@ -14,7 +14,7 @@
         "description": "La montre de plongée ultime",
         "prix": 10000,
         "stock": 5,
-        "image": "https://media.rolex.com/image/upload/q_auto:eco/f_auto/c_limit,w_1920/v1710348073/rolexcom/new-watches/2024/hub-watches/collection-rolex-watches-submariner-m124060-0001-10156_rsa_submariner_41_m124060_0001_carrousel_24"
+        "image": "https://media.rolex.com/image/upload/q_auto:eco/f_auto/c_limit,w_3840/v1710348073/rolexcom/new-watches/2024/hub-watches/collection-rolex-watches-submariner-m124060-0001-10156_rsa_submariner_41_m124060_0001_carrousel_24"
     },
     {
         "id": 2,
@@ -22,6 +22,6 @@
         "description": "Citoyenne des profondeurs",
         "prix": 16000,
         "stock": 3,
-        "image": "https://media.rolex.com/image/upload/q_auto:eco/f_auto/c_limit,w_1920/v1710348133/rolexcom/new-watches/2024/hub-watches/collection-rolex-watches-sea-dweller-10158_rsa_seadweller_43_m126603_0001_carrousel_24"
+        "image": "https://media.rolex.com/image/upload/q_auto:eco/f_auto/c_limit,w_3840/v1710348133/rolexcom/new-watches/2024/hub-watches/collection-rolex-watches-sea-dweller-10158_rsa_seadweller_43_m126603_0001_carrousel_24"
     }
 ]

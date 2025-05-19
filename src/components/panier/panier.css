@@ -1,0 +1,44 @@
+.panier {
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    height: 500px;
+    background-color: white;
+    width: 300px;
+    padding: 20px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.divPanier {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.panierTxtPrix {
+    display: flex;
+    flex-direction: column;
+}
+.txtPanier {
+    font-weight: bold;
+}
+.panierProduit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.divImgPanier {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.imgPanier {
+    margin-top: 20px;
+    width: 175px;
+    height: 175px;
+    object-fit: cover;
+    object-position: top;
+}

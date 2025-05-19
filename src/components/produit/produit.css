@@ -1,10 +1,11 @@
 .produit {
     width: 300px;
     height: 600px;
-    border: 1px solid red;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 .produitImg {
     width: 100%;
@@ -16,15 +17,51 @@
 }
 .produitImg img {
     height: 500px;
-
     object-fit: cover;
     object-position: center;
+    cursor: pointer;
+}
+.produitImg img:hover {
+    transform: scale(190%) translateY(40px);
 }
 .produitInfos {
     height: 200px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-between;
+    padding: 30px;
+}
+.produitBtn {
+    padding: 10px 20px;
+    border: 1px solid black;
+    background-color: white;
+    cursor: pointer;
+    transition: .2s;
+}
+.produitBtn:disabled {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    border-color: transparent;
+    cursor: auto;
+}
+.produitBtn:disabled:hover {
+ background-color: rgba(0, 0, 0, 0.2);
+}
+.produitBtn:hover {
+    background-color: black;
+    color: white;
+}
+.produitTitre {
+    font-size: 26px;
+    font-weight: bold;
+}
+.produitStock {
+    color: rgba(0, 0, 0, 0.5);
+}
+.divAcheterPrix {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
