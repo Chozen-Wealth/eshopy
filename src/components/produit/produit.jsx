@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react"
 import "./produit.css"
 
-export default function Produit({total,setTotal, panier, setPanier, solde, setSolde, id, title, description, prix, image, stock}){
+export default function Produit({total,setTotal, panier, setPanier, solde, setSolde, id, title, description, prix, image, stock, stocks, setStocks}){
 
-    const [stockActuel, setStockActuel] = useState(stock)
+    const stockActuel = stocks[id] || 0
 
     const HandleClick = ()=>{
-        if (solde > prix) {
+        if (solde > prix & stockActuel > 0) {
             setSolde(solde - prix)
-            setStockActuel(stockActuel - 1)
             setTotal(total + prix)
+            setStocks(prev => ({...prev, [id]: prev[id] - 1}))
+            
             const articleExistant = panier.find(item => item.id === id)
             if (articleExistant) {
                 const panierMisAJour = panier.map(item => 
