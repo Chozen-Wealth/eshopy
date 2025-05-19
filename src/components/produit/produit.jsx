@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react"
 import "./produit.css"
 
-export default function Produit({panier, setPanier, solde, setSolde, id, title, description, prix, image, stock}){
+export default function Produit({total,setTotal, panier, setPanier, solde, setSolde, id, title, description, prix, image, stock}){
+
     const [stockActuel, setStockActuel] = useState(stock)
+
     const HandleClick = ()=>{
         if (solde > prix) {
             setSolde(solde - prix)
             setStockActuel(stockActuel - 1)
+            setTotal(total + prix)
             const articleExistant = panier.find(item => item.id === id)
             if (articleExistant) {
                 const panierMisAJour = panier.map(item => 
@@ -17,8 +20,6 @@ export default function Produit({panier, setPanier, solde, setSolde, id, title, 
             else {
                 setPanier([...panier,{title: title, prix: prix, quantity: 1, image: image, id: id}])
             }
-
-
         }
         else {
             return(

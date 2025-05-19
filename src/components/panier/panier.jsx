@@ -1,24 +1,27 @@
+import { useState } from "react"
 import "./panier.css"
+import ContenuPanier from "../contenuPanier/contenuPanier"
 
-export default function Panier({panier, setPanier, panierOuvert, setPanierOuvert}){
+export default function Panier({total, setTotal, data, panier, setPanier, panierOuvert, setPanierOuvert}){
+
+
     return(
         <>
         {panierOuvert && (
             <div className="panier">
-                <span>Mon Panier</span>
                 <div className="divPanier">
+                <span>Mon Panier</span>
+                <div className="panierProduit">
                     {panier.map(article => (
-                        <div className="panierProduit" key={article.id}>
-                            <div className="divImgPanier">
-                                <img className="imgPanier" src={article.image} alt="" />
-                            </div>
-                            <div className="panierTxtPrix">
-                                <span className="txtPanier">{article.title}</span>
-                                <span className="prixPanier">{article.prix.toLocaleString("fr-FR")}€</span>
-                            </div>
-                            <span className="quantityPanier">{article.quantity}</span>
-                        </div>
+                        <ContenuPanier key={article.id} id={article.id} title={article.title} prix={article.prix} image={article.image} quantity={article.quantity} setPanier={setPanier} />
                     ))}
+                </div>
+                </div>
+                <div className="totalPanier">
+                    <div className="totalPanierTop">
+                        <span>Total :</span>
+                        <span>{total.toLocaleString("fr-FR")}€</span>
+                    </div>
                 </div>
             </div>
         )}
