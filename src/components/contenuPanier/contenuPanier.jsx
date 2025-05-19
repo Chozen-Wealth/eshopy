@@ -2,20 +2,26 @@ import { useState } from "react"
 import "./contenuPanier.css"
 
 export default function ContenuPanier({id, image, title, quantity, prix, setPanier, total, setTotal, solde, setSolde, stock, stocks, setStocks}){
+    const [enSuppression, setEnSuppression] = useState(false)
 
     const HandleClickSupp = ()=> {
-        setPanier(prevPanier => 
-            prevPanier.map(article =>
-                article.id === id ? {...article, quantity: article.quantity -1} : article).filter(article => article.quantity > 0)
-        )
-        setTotal(prev => prev - prix)
-        setSolde(prev => prev + prix)
-        setStocks(prev => ({...prev, [id]: prev[id] + 1}))
+        setEnSuppression(true)
+
+        setTimeout(()=>{
+
+            setPanier(prevPanier => 
+                prevPanier.map(article =>
+                    article.id === id ? {...article, quantity: article.quantity -1} : article).filter(article => article.quantity > 0)
+                )
+                setTotal(prev => prev - prix)
+                setSolde(prev => prev + prix)
+                setStocks(prev => ({...prev, [id]: prev[id] + 1}))
+        }, 300)
     }
 
     return(
         <>
-            <div className="articlePanier">
+            <div className={`articlePanier ${enSuppression ? "fadeOut" : ""}`}>
                 <div className="divImgPanier">
                     <img className="imgPanier" src={image} alt="" />
                 </div>

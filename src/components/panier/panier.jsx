@@ -7,10 +7,9 @@ export default function Panier({total, setTotal, data, panier, setPanier, panier
 
     return(
         <>
-        {panierOuvert && (
-            <div className="panier">
-                <div className="divPanier">
+            <div className={`panier ${panierOuvert === true ? "open": ""}`}>
                 <span>Mon Panier</span>
+                <div className="divPanier">
                 <div className="panierProduit">
                     {panier.map(article => (
                         <ContenuPanier stocks={stocks} setStocks={setStocks} solde={solde} setSolde={setSolde} total={total} setTotal={setTotal} key={article.id} id={article.id} title={article.title} prix={article.prix} image={article.image} quantity={article.quantity} setPanier={setPanier} stock={article.stock} />
@@ -22,9 +21,11 @@ export default function Panier({total, setTotal, data, panier, setPanier, panier
                         <span>Total :</span>
                         <span>{total.toLocaleString("fr-FR")}€</span>
                     </div>
+                    <div className="totalPanierBot">
+                        <button className="btnCheckout">Finaliser l'achat</button>
+                    </div>
                 </div>
             </div>
-        )}
         </>
     )
 }
