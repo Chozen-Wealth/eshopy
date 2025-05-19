@@ -6,9 +6,7 @@ export default function ContenuPanier({id, image, title, quantity, prix, setPani
 
     const HandleClickSupp = ()=> {
         setEnSuppression(true)
-
         setTimeout(()=>{
-
             setPanier(prevPanier => 
                 prevPanier.map(article =>
                     article.id === id ? {...article, quantity: article.quantity -1} : article).filter(article => article.quantity > 0)

@@ -25,6 +25,7 @@
     background-color: rgb(245, 245, 245);
     height: 100%;
     padding: 5px;
+    overflow-x: hidden;
 }
 .panierTxtPrix {
     display: flex;
@@ -39,7 +40,6 @@
     align-items: center;
     justify-content: space-between;
     gap: 5px;
-    
 }
 .articlePanier {
     display: flex;
@@ -53,6 +53,7 @@
 .articlePanier.fadeOut {
   opacity: 0;
   transform: translateX(200px);
+  transition: 0.3s ease;
 }
 .divImgPanier {
     width: 75px;
